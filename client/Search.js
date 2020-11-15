@@ -7,16 +7,21 @@ import MovieResult from "./MovieResult";
 const Search = () => {
   const [title, setTitle] = useState("");
   const [results, setResults] = useState([]);
+  const [error, setError] = useState("");
 
   const handleSubmit = async event => {
     event.preventDefault();
     // api currently only sends back 10 results. could implement pagination as a future feature
-    let response = await axios.get(`/api/search/${title}`);
-    setResults(response.data.Search);
+    const { data } = await axios.get(`/api/search/${title}`);
+    if (data.Response !== "False") {
+      setError("");
+      setResults(data.Search);
+    } else {
+      setError("Sorry, no results found!");
+    }
 
     setTitle("");
   };
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -27,6 +32,7 @@ const Search = () => {
         </button>
       </form>
       <div className="container">
+        {error && <p>{error}</p>}
         {results.map(result => {
           return <MovieResult key={result.imdbID} result={result} />;
         })}

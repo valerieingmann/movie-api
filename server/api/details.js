@@ -33,6 +33,9 @@ router.get("/:id", async (req, res, next) => {
     }
 
     const { data } = await axios.request(options);
+
+    // when I decide what data I acutally need, clean up this object to only send back necessary data
+
     data.upvotes = upvotes;
     data.downvotes = downvotes;
     res.json(data);
