@@ -2,8 +2,6 @@ const router = require("express").Router();
 const axios = require("axios").default;
 require("../../secrets");
 
-console.log(process.env.NODE_ENV);
-
 const apiKey = process.env.RAPID_API_KEY;
 
 router.get("/:title", async (req, res, next) => {
@@ -20,6 +18,26 @@ router.get("/:title", async (req, res, next) => {
     };
     let response = await axios.request(options);
     res.json(response.data);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/details/:id", async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const options = {
+      method: "GET",
+      url: "https://movie-database-imdb-alternative.p.rapidapi.com/",
+      params: { i: "tt4154796", r: "json" },
+      headers: {
+        "x-rapidapi-key": apiKey,
+        "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com"
+      }
+    };
+
+    const { data } = await axios.request(options);
+    res.json(data);
   } catch (error) {
     next(error);
   }

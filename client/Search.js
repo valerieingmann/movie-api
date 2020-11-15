@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import MovieResult from "./MovieResult";
+
+// TODO: handle extra dashes on end of year
 
 const Search = () => {
   const [title, setTitle] = useState("");
@@ -13,9 +16,9 @@ const Search = () => {
 
     setTitle("");
   };
-  console.log(results);
+
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit}>
         <label>Search by Title</label>
         <input type="text" value={title} onChange={event => setTitle(event.target.value)}></input>
@@ -23,19 +26,12 @@ const Search = () => {
           Submit
         </button>
       </form>
-
-      {results.map(result => {
-        let posterElem = result.Poster && result.Poster !== "N/A" && <img src={result.Poster} />;
-        return (
-          <div key={result.imdbID}>
-            <p>
-              {result.Title}, {result.Year}
-            </p>
-            {posterElem}
-          </div>
-        );
-      })}
-    </>
+      <div className="container">
+        {results.map(result => {
+          return <MovieResult key={result.imdbID} result={result} />;
+        })}
+      </div>
+    </div>
   );
 };
 
