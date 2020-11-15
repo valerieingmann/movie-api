@@ -16,8 +16,8 @@ router.get("/:title", async (req, res, next) => {
         "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com"
       }
     };
-    let response = await axios.request(options);
-    res.json(response.data);
+    const { data } = await axios.request(options);
+    res.json(data);
   } catch (error) {
     next(error);
   }
