@@ -8,7 +8,7 @@ ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path="/" component={Search} />
-      <Route exact path="/:id" component={MovieDetails} />
+      <Route exact path="/:imdbID" component={MovieDetails} />
     </Switch>
   </Router>,
   document.getElementById("app")

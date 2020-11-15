@@ -10,7 +10,7 @@ const DOWNVOTES = "downvotes";
 // TODO: connect upvotes and downvotes to local storage so that users can't just refresh the page and add more
 
 const MovieDetails = props => {
-  const { id } = props.match.params;
+  const { imdbID } = props.match.params;
   const [details, setDetails] = useState({});
   const [upvotes, setUpvotes] = useState(0);
   const [isUpvoted, setIsUpvoted] = useState(false);
@@ -18,7 +18,7 @@ const MovieDetails = props => {
   const [isDownvoted, setIsDownvoted] = useState(false);
 
   useEffect(async () => {
-    const { data } = await axios.get(`/api/details/${id}`);
+    const { data } = await axios.get(`/api/details/${imdbID}`);
     setDetails(data);
     setUpvotes(data.upvotes);
     setDownvotes(data.downvotes);
@@ -38,7 +38,7 @@ const MovieDetails = props => {
       remove = DOWNVOTES;
     }
 
-    const { data } = await axios.put(`/api/vote/${id}`, { add, remove });
+    const { data } = await axios.put(`/api/vote/${imdbID}`, { add, remove });
     setUpvotes(data.upvotes);
     setDownvotes(data.downvotes);
 
@@ -60,7 +60,7 @@ const MovieDetails = props => {
       remove = UPVOTES;
     }
 
-    const { data } = await axios.put(`/api/vote/${id}`, { add, remove });
+    const { data } = await axios.put(`/api/vote/${imdbID}`, { add, remove });
     setUpvotes(data.upvotes);
     setDownvotes(data.downvotes);
     if (isUpvoted) setIsUpvoted(false);

@@ -5,13 +5,13 @@ require("../../secrets");
 
 const apiKey = process.env.RAPID_API_KEY;
 
-router.get("/:id", async (req, res, next) => {
+router.get("/:imdbID", async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const imdbID = req.params.imdbID;
     const options = {
       method: "GET",
       url: "https://movie-database-imdb-alternative.p.rapidapi.com/",
-      params: { i: id, r: "json" },
+      params: { i: imdbID, r: "json" },
       headers: {
         "x-rapidapi-key": apiKey,
         "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com"
@@ -20,7 +20,7 @@ router.get("/:id", async (req, res, next) => {
 
     const movie = await Movie.findOne({
       where: {
-        imdbID: id
+        imdbID
       }
     });
 

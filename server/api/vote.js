@@ -5,7 +5,6 @@ const router = require("express").Router();
 router.put("/:imdbID/", async (req, res, next) => {
   try {
     const imdbID = req.params.imdbID;
-    console.log(req.params);
     const [movie] = await Movie.findOrCreate({ where: { imdbID } });
 
     if (req.body.add) {
