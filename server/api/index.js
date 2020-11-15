@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
-// routes will go here
 router.use("/search", require("./search"));
+router.use("/details", require("./details"));
 
 router.use((req, res, next) => {
   const err = new Error("Not found.");

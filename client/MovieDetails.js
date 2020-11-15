@@ -7,7 +7,7 @@ const MovieDetails = props => {
 
   useEffect(async () => {
     // get movie details data
-    let response = await axios.get(`/api/search/details/${id}`);
+    let response = await axios.get(`/api/details/${id}`);
     setDetails(response.data);
   }, []);
 
