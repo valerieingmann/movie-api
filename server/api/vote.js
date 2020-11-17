@@ -21,7 +21,7 @@ router.put("/:imdbID/", async (req, res, next) => {
       }
     }
 
-    res.json({ upvotes: movie.upvotes, downvotes: movie.downvotes });
+    res.json(movie);
   } catch (error) {
     next(error);
   }
