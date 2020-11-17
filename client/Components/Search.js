@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import MovieResult from "./MovieResult";
+import { MovieResult } from "../Components";
 
 // TODO: handle extra dashes on end of year
 
@@ -23,7 +23,7 @@ const Search = () => {
     setTitle("");
   };
   return (
-    <div>
+    <div className="container">
       <form onSubmit={handleSubmit}>
         <label>Search by Title</label>
         <input type="text" value={title} onChange={event => setTitle(event.target.value)}></input>
@@ -31,7 +31,7 @@ const Search = () => {
           Submit
         </button>
       </form>
-      <div className="container">
+      <div>
         {error && <p>{error}</p>}
         {results.map(result => {
           return <MovieResult key={result.imdbID} result={result} />;

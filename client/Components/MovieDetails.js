@@ -67,11 +67,12 @@ const MovieDetails = props => {
     if (isUpvoted) setIsUpvoted(false);
     setIsDownvoted(!isDownvoted);
   };
+  console.log(details);
 
   return (
     <div>
       <p>{details.Title}</p>
-      {details.Poster && <img src={details.Poster} />}
+      {details.Poster !== "N/A" && <img src={details.Poster} />}
       <p>{details.Year}</p>
       <p>{details.Director}</p>
       <p>{details.Plot}</p>
