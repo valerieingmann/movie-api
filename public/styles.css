@@ -1,7 +1,11 @@
 .upvoted {
-  background-color: green;
+  color: green;
 }
 
 .downvoted {
-  background-color: red;
+  color: red;
 }
+
+/* .thumb-button {
+  color: darkgrey;
+} */

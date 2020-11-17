@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const UPVOTES = "upvotes";
 const DOWNVOTES = "downvotes";
@@ -77,13 +78,17 @@ const MovieDetails = props => {
       <p>{details.Runtime}</p>
       <p>{details.Genre}</p>
       <p>Upvotes: {upvotes}</p>
-      <button className={isUpvoted ? "upvoted" : "thumb-button"} onClick={handleUpClick}>
-        +
-      </button>
+      <FontAwesomeIcon
+        icon="thumbs-up"
+        className={isUpvoted ? "upvoted" : "thumb-button"}
+        onClick={handleUpClick}
+      />
       <p>Downvotes: {downvotes}</p>
-      <button className={isDownvoted ? "downvoted" : "thumb-button"} onClick={handleDownClick}>
-        -
-      </button>
+      <FontAwesomeIcon
+        icon="thumbs-down"
+        className={isDownvoted ? "downvoted" : "thumb-button"}
+        onClick={handleDownClick}
+      />
     </div>
   );
 };
