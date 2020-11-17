@@ -9,7 +9,8 @@ body {
 .container {
   background-image: url("theater.jpg");
   height: 100vh;
-  background-size: contain;
+  background-size: cover;
+  background-position: center center;
 }
 .upvoted {
   color: green;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { NotFound, MovieDetails } from "../Components";
+import { NotFound } from "../Components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // TODO: refactor upvote and downvote methods into one?
