@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: black;
+  color: white;
 }
 
 .container {
@@ -18,9 +19,9 @@ body {
   color: red;
 }
 
-/* .thumb-button {
-  color: darkgrey;
-} */
+.thumb-button {
+  color: grey;
+}
 
 .nav-container {
   padding-top: 20px;
