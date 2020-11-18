@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { NotFound } from "../Components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { MovieDetails } from "../Components";
 
-// TODO: refactor upvote and downvote methods into one?
 // TODO: add loading spinner
 // TODO: connect upvotes and downvotes to local storage so that users can't just refresh the page and add more
 
@@ -64,28 +63,15 @@ const MovieDetailsContainer = props => {
   else if (error) return <NotFound error={error} />;
   else {
     return (
-      <>
-        <p>{details.Title}</p>
-        {details.Poster !== "N/A" && <img src={details.Poster} />}
-        <p>{details.Year}</p>
-        <p>{details.Director}</p>
-        <p>{details.Plot}</p>
-        <p>{details.Runtime}</p>
-        <p>{details.Genre}</p>
-
-        <p>Upvotes: {details.upvotes}</p>
-        <FontAwesomeIcon
-          icon="thumbs-up"
-          className={isUpvoted ? "upvoted" : "thumb-button"}
-          onClick={handleUpClick}
+      <div>
+        <MovieDetails
+          details={details}
+          isUpvoted={isUpvoted}
+          isDownvoted={isDownvoted}
+          handleUpClick={handleUpClick}
+          handleDownClick={handleDownClick}
         />
-        <p>Downvotes: {details.downvotes}</p>
-        <FontAwesomeIcon
-          icon="thumbs-down"
-          className={isDownvoted ? "downvoted" : "thumb-button"}
-          onClick={handleDownClick}
-        />
-      </>
+      </div>
     );
   }
 };

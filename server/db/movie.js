@@ -1,14 +1,13 @@
 const Sequelize = require("sequelize");
 const db = require("./db");
 
-// use imdbID as primary key so that there are no duplicate movies
-
 const Movie = db.define(
   "movie",
   {
     imdbID: {
       type: Sequelize.STRING,
-      primaryKey: true
+      primaryKey: true,
+      allowNull: false
     },
     upvotes: {
       type: Sequelize.INTEGER,

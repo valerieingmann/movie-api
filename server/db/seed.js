@@ -1,12 +1,7 @@
 const db = require("./db");
-const Movie = require("./movie");
 
 async function seed() {
   await db.sync({ force: true });
-
-  await Movie.create({ imdbID: "tt0848228", upvotes: 2 });
-
-  // add seed data later
 }
 
 async function runSeed() {

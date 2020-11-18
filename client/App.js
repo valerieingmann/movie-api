@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Search, MovieDetailsContainer, Navbar, NotFound } from "./Components";
+import { Search, MovieDetailsContainer, Navbar } from "./Components";
 
 const App = () => {
   return (
