@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { NotFound } from "../Components";
-import { MovieDetails } from "../Components";
-
-// TODO: add loading spinner
-// TODO: connect upvotes and downvotes to local storage so that users can't just refresh the page and add more
+import { MovieDetails, NotFound } from "../Components";
 
 const MovieDetailsContainer = props => {
   const { imdbID } = props.match.params;

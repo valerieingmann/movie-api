@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { MovieResult } from "../Components";
-
-// TODO: handle extra dashes on end of year
+import { MovieResult, Form } from "../Components";
 
 const Search = () => {
   const [title, setTitle] = useState("");
@@ -11,30 +9,25 @@ const Search = () => {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    // api currently only sends back 10 results. could implement pagination as a future feature
-    const { data } = await axios.get(`/api/search/${title}`);
-    if (data.Response !== "False") {
-      setError("");
-      setResults(data.Search);
-    } else {
-      setError("Sorry, no results found!");
+    try {
+      if (!title) alert("Please type in a movie title!");
+      const { data } = await axios.get(`/api/search/${title}`);
+      if (data.Response !== "False") {
+        setError("");
+        setResults(data.Search);
+      } else {
+        setError("Sorry, no results found!");
+      }
+    } catch (error) {
+      setError(error);
     }
-
-    setTitle("");
   };
+
   return (
     <div className="landing-container">
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <label>Search by Title</label>
-          <input type="text" value={title} onChange={event => setTitle(event.target.value)}></input>
-          <button type="submit" disabled={!title.length}>
-            Submit
-          </button>
-        </form>
-      </div>
+      <Form handleSubmit={handleSubmit} title={title} setTitle={setTitle} />
       <div className="results-container">
-        {error && <p>{error}</p>}
+        {error && <p className="black">{error}</p>}
         {results.map(result => {
           return <MovieResult key={result.imdbID} result={result} />;
         })}

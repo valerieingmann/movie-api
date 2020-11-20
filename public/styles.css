@@ -7,6 +7,22 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.nav-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+}
+
+.nav {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.nav:hover {
+  color: lightgray;
+}
+
 .landing-container {
   text-align: center;
   background-image: url("theater.jpg");
@@ -15,35 +31,58 @@ body {
   background-position: center center;
 }
 
-.form-container {
-  background-color: indianred;
+form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+input {
+  width: 300px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  padding: 5px;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  padding: 10px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: lightgray;
 }
 
 .results-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 20px;
   margin-left: 60px;
   margin-right: 60px;
-  background: grey;
+  background-color: lightgray;
+  opacity: 80%;
   justify-content: center;
+  border-radius: 20px;
 }
 
-.poster-result {
-  margin-top: 15px;
-  height: 200px;
-  width: 130px;
-  background-color: turquoise;
-  display: flex;
-}
-
-.no-poster-text {
-  align-self: center;
-  margin: 10px;
-}
-
-.result-container {
-  background-color: white;
+.black {
+  color: black;
 }
 
 .result-link {
@@ -54,15 +93,19 @@ body {
   margin: 5px;
   padding: 5px;
   width: 200px;
-  color: black;
 }
 
-.form {
-  background-color: green;
+.poster-result {
+  margin-top: 15px;
+  height: 200px;
+  width: 130px;
+  background-color: white;
+  display: flex;
 }
 
-.form input {
-  background: greenyellow;
+.poster-result span {
+  align-self: center;
+  margin: 10px;
 }
 
 .upvoted {
@@ -75,17 +118,4 @@ body {
 
 .thumb-button {
   color: grey;
-}
-
-.nav-container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 15px;
-}
-
-.nav {
-  color: white;
-  position: relative;
-  text-decoration: none;
-  font-size: 30px;
 }

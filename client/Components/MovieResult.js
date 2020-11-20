@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 const MovieResult = props => {
   const { result } = props;
   return (
-    <div className="result-container">
-      <Link className="result-link" target="_blank" to={`/${result.imdbID}`}>
+    <div>
+      <Link className="result-link black" target="_blank" to={`/${result.imdbID}`}>
         {result.Poster !== "N/A" ? (
           <img className="poster-result" src={result.Poster} />
         ) : (
           <div className="poster-result">
-            <span className="no-poster-text">No Poster Available</span>
+            <span>No Poster Available</span>
           </div>
         )}
-        <p className="result-text">
+        <p>
           {result.Title}, {result.Year}
         </p>
       </Link>
