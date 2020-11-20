@@ -23,15 +23,17 @@ const Search = () => {
     setTitle("");
   };
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <label>Search by Title</label>
-        <input type="text" value={title} onChange={event => setTitle(event.target.value)}></input>
-        <button type="submit" disabled={!title.length}>
-          Submit
-        </button>
-      </form>
-      <div>
+    <div className="landing-container">
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <label>Search by Title</label>
+          <input type="text" value={title} onChange={event => setTitle(event.target.value)}></input>
+          <button type="submit" disabled={!title.length}>
+            Submit
+          </button>
+        </form>
+      </div>
+      <div className="results-container">
         {error && <p>{error}</p>}
         {results.map(result => {
           return <MovieResult key={result.imdbID} result={result} />;

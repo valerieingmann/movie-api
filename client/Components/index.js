@@ -1,4 +1,3 @@
-export { default as Navbar } from "./Navbar";
 export { default as MovieResult } from "./MovieResult";
 export { default as Search } from "./Search";
 export { default as NotFound } from "./NotFound";

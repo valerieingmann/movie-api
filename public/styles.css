@@ -4,14 +4,67 @@ body {
   padding: 0;
   background-color: black;
   color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.container {
+.landing-container {
+  text-align: center;
   background-image: url("theater.jpg");
   height: 100vh;
   background-size: cover;
   background-position: center center;
 }
+
+.form-container {
+  background-color: indianred;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 60px;
+  margin-right: 60px;
+  background: grey;
+  justify-content: center;
+}
+
+.poster-result {
+  margin-top: 15px;
+  height: 200px;
+  width: 130px;
+  background-color: turquoise;
+  display: flex;
+}
+
+.no-poster-text {
+  align-self: center;
+  margin: 10px;
+}
+
+.result-container {
+  background-color: white;
+}
+
+.result-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  width: 200px;
+  color: black;
+}
+
+.form {
+  background-color: green;
+}
+
+.form input {
+  background: greenyellow;
+}
+
 .upvoted {
   color: green;
 }
