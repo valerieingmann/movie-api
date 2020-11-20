@@ -5,7 +5,7 @@ const MovieResult = props => {
   const { result } = props;
   return (
     <div className="result-container">
-      <Link className="result-link" to={`/${result.imdbID}`}>
+      <Link className="result-link" target="_blank" to={`/${result.imdbID}`}>
         {result.Poster !== "N/A" ? (
           <img className="poster-result" src={result.Poster} />
         ) : (
