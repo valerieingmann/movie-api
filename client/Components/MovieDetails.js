@@ -15,18 +15,19 @@ const MovieDetails = props => {
             <p>{props.details.Runtime}</p>
             <p>{props.details.Plot}</p>
             <div className="thumb-buttons">
+              <span>{props.details.downvotes}</span>
               <FontAwesomeIcon
                 icon="thumbs-down"
                 className={props.isDownvoted ? "downvoted thumb-button" : "thumb-button"}
                 onClick={props.handleDownClick}
               />
-              <span>{props.details.downvotes}</span>
+
+              <span>{props.details.upvotes}</span>
               <FontAwesomeIcon
                 icon="thumbs-up"
                 className={props.isUpvoted ? "upvoted thumb-button" : "thumb-button"}
                 onClick={props.handleUpClick}
               />
-              <span>{props.details.upvotes}</span>
             </div>
           </div>
         </div>
