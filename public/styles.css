@@ -20,7 +20,7 @@ body {
 }
 
 .nav:hover {
-  color: lightgray;
+  color: gray;
 }
 
 .landing-container {
@@ -49,6 +49,7 @@ input {
   border-radius: 8px;
   border: none;
   padding: 5px;
+  padding-left: 10px;
   font-size: 15px;
   margin-bottom: 15px;
 }
@@ -65,7 +66,18 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: lightgray;
+  background-color: gray;
+}
+
+.pagination button {
+  height: 25px;
+  padding: 5px;
+  margin: 0;
+}
+
+.pagination span {
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .results-container {
@@ -75,14 +87,9 @@ button:hover {
   margin-top: 20px;
   margin-left: 60px;
   margin-right: 60px;
-  background-color: lightgray;
-  opacity: 80%;
+  background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   border-radius: 20px;
-}
-
-.black {
-  color: black;
 }
 
 .result-link {
@@ -93,6 +100,7 @@ button:hover {
   margin: 5px;
   padding: 5px;
   width: 200px;
+  color: white;
 }
 
 .poster-result {

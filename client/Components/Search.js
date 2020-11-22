@@ -55,7 +55,7 @@ const Search = () => {
         )}
       </div>
       <div className="results-container">
-        {error && <p className="black">{error}</p>}
+        {error && <p>{error}</p>}
         {results.map(result => {
           return <MovieResult key={result.imdbID} result={result} />;
         })}
