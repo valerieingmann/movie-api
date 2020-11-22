@@ -116,14 +116,55 @@ button:hover {
   margin: 10px;
 }
 
+/* Movie Details */
+
+.movie-details-container {
+  display: flex;
+  margin-left: 15px;
+}
+
+.details {
+  display: flex;
+}
+
+.details-inner {
+  max-width: 50vw;
+  margin-left: 20px;
+}
+
+.title {
+  font-size: 25px;
+}
+
+.thumb-buttons {
+  font-size: 30px;
+}
+
+.thumb-buttons span {
+  margin-right: 20px;
+}
+
+.thumb-button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.thumb-button:hover {
+  color: gray;
+}
+
 .upvoted {
   color: green;
+}
+
+.upvoted:hover {
+  color: darkgreen;
 }
 
 .downvoted {
   color: red;
 }
 
-.thumb-button {
-  color: grey;
+.downvoted:hover {
+  color: darkred;
 }
