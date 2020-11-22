@@ -4,3 +4,4 @@ export { default as MovieResult } from "./MovieResult";
 export { default as MovieDetailsContainer } from "./MovieDetailsContainer";
 export { default as MovieDetails } from "./MovieDetails";
 export { default as NotFound } from "./NotFound";
+export { default as PageNav } from "./PageNav";
