@@ -1,7 +1,9 @@
 const db = require("./db");
+const Movie = require("./movie");
 
 async function seed() {
   await db.sync({ force: true });
+  const movie = await Movie.create({ imdbID: "tt0451279" });
 }
 
 async function runSeed() {
