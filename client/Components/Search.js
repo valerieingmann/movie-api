@@ -23,8 +23,9 @@ const Search = () => {
         setResults(data.Search);
         setTotalPages(Math.floor(data.totalResults / 10));
       } else {
-        setResults([]);
         setError("Sorry, no results found!");
+        setResults([]);
+        setTotalPages(0);
       }
     } catch (error) {
       setError(error);
