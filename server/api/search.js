@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const axios = require("axios").default;
-require("../../secrets");
+if (process.env.NODE_ENV === "development") {
+  require("../../secrets");
+}
 
 const apiKey = process.env.RAPID_API_KEY;
 
