@@ -1,15 +1,18 @@
 {
   "name": "movie-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "web app for searching movies by title",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-client": "webpack",
+    "build-client-watch": "webpack -w",
+    "deploy": "script/deploy",
+    "seed": "node server/db/seed.js",
     "start": "node server",
-    "start-dev": "webpack -w &  nodemon server/index.js",
-    "seed": "node server/db/seed.js"
+    "start-dev": "NODE_ENV='development' npm run build-client-watch & NODE_ENV='development' nodemon server/index.js"
   },
-  "author": "",
+  "author": "Valerie Ingmann",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",

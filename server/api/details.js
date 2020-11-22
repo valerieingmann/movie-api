@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const axios = require("axios").default;
 const Movie = require("../db/movie");
-require("../../secrets");
 
 const apiKey = process.env.RAPID_API_KEY;
 
