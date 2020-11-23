@@ -55,7 +55,7 @@ const MovieDetailsContainer = props => {
     setDetails({ ...details, upvotes: data.upvotes, downvotes: data.downvotes });
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text">Loading...</p>;
   else if (error) return <NotFound error={error} />;
   else {
     return (

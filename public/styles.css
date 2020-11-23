@@ -23,6 +23,10 @@ body {
   color: gray;
 }
 
+.text {
+  margin: 15px;
+}
+
 .landing-container {
   text-align: center;
   background-image: url("theater.jpg");
@@ -115,8 +119,6 @@ button:hover {
   align-self: center;
   margin: 10px;
 }
-
-/* Movie Details */
 
 .movie-details-container {
   display: flex;
